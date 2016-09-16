@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Module 2</title>
+    <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <script src="services.js"></script>
+    <script src="controllers.js"></script>
+    <script src="app.js"></script>
 </head>
-<body>
-Module 2
+<body ng-app="ShoppingListCheckOff">
+<div ng-controller="ToBuyShoppingController as listToBuy">
+    <ol>
+        <li ng-repeat="item in items">
+            Buy {{ ::item.quantity}} {{ ::item.name}}
+        </li>
+    </ol>
+</div>
+<!--
+<div ng-controller="AlreadyBoughtShoppingController as itemsBought">
+    <ol>
+        <li ng-repeat=""></li>
+    </ol>
+</div>
+-->
 </body>
 </html>
