@@ -2,26 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Module 2</title>
+    <title>Module 2 Solution</title>
     <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
-    <script src="services.js"></script>
     <script src="controllers.js"></script>
+    <script src="services.js"></script>
     <script src="app.js"></script>
 </head>
+<style>
+    div {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 30px;
+        width: 300px;
+    }
+    h3 {
+        border-bottom: thin solid #ddd;
+        padding-bottom: 5px;
+    }
+    h4 {
+        text-transform: uppercase;
+        margin: 0;
+    }
+    ul {
+        padding: 0 0 0 20px;
+    }
+    li {
+        margin: 10px 0;
+    }
+    span {
+        width: 200px;
+        display: inline-block;
+    }
+</style>
 <body ng-app="ShoppingListCheckOff">
-<div ng-controller="ToBuyShoppingController as listToBuy">
-    <ol>
-        <li ng-repeat="item in items">
-            Buy {{ ::item.quantity}} {{ ::item.name}}
+<div ng-controller="ToBuyShoppingController as itemsToBuy">
+    <h3>Shopping list</h3>
+    <h4 ng-if="itemsToBuy.emptyList">Everything is bought!</h4>
+    <ul>
+        <li ng-repeat="item in itemsToBuy.items">
+            <span>Buy {{ ::item.quantity}} {{ ::item.name }}</span><button ng-click="itemsToBuy.buyItem($index)">Bought</button>
         </li>
-    </ol>
+    </ul>
 </div>
-<!--
 <div ng-controller="AlreadyBoughtShoppingController as itemsBought">
-    <ol>
-        <li ng-repeat=""></li>
-    </ol>
+    <h3>Bought</h3>
+    <h4 ng-if="itemsBought.items.length === 1">{{itemsBought.items[0].message}}</h4>
+    <ul>
+        <li ng-if="$index != 0" ng-repeat="item in itemsBought.items">
+            <span>Bought {{ ::item.quantity}} {{ ::item.name }}</span>
+        </li>
+    </ul>
 </div>
--->
 </body>
 </html>

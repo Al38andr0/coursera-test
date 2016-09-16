@@ -1,49 +1,43 @@
 function ShoppingListCheckOffService() {
     var service = this;
-    var items = [
+    var toBuy = [
         {
             name : "cookies",
-            quantity : 10,
-            bought : false,
-            id : 1
+            quantity : 10
         },
         {
             name : "cakes",
-            quantity : 2,
-            bought : false,
-            id : 2
+            quantity : 2
         },
         {
             name : "baguettes",
-            quantity : 5,
-            bought : false,
-            id : 3
+            quantity : 5
         },
         {
             name : "donuts",
-            quantity : 3,
-            bought : false,
-            id : 4
+            quantity : 3
         },
         {
             name : "pains au chocolate",
-            quantity : 6,
-            bought : false,
-            id : 5
+            quantity : 6
         }
     ];
-    var numberItemsBought = 0;
 
-    service.buyItem = function (id) {
-        for(var i = 0; i < items.length; i++) {
-            if (items[i].id === id) {
-                items[i].bought = true;
-            }
+    var bought = [
+        {
+            message : "Nothing bought yet"
         }
-        return numberItemsBought++;
+    ];
+
+    service.buyItem = function (index) {
+        bought.push(toBuy[index]);
+        toBuy.splice(index, 1);
     };
 
-    service.getItems = function () {
-        return items;
-    }
+    service.getItemsToBuy = function () {
+        return toBuy;
+    };
+    service.getItemsBought = function () {
+        return bought;
+    };
 }
