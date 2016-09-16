@@ -37,7 +37,7 @@
 <body ng-app="ShoppingListCheckOff">
 <div ng-controller="ToBuyShoppingController as itemsToBuy">
     <h3>Shopping list</h3>
-    <h4 ng-if="itemsToBuy.emptyList">Everything is bought!</h4>
+    <h4 ng-if="itemsToBuy.items.length === 0">Everything is bought!</h4>
     <ul>
         <li ng-repeat="item in itemsToBuy.items">
             <span>Buy {{ ::item.quantity}} {{ ::item.name }}</span><button ng-click="itemsToBuy.buyItem($index)">Bought</button>
