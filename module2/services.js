@@ -23,11 +23,7 @@ function ShoppingListCheckOffService() {
         }
     ];
 
-    var bought = [
-        {
-            message : "Nothing bought yet"
-        }
-    ];
+    var bought = [];
 
     service.buyItem = function (index) {
         bought.push(toBuy[index]);

@@ -46,9 +46,9 @@
 </div>
 <div ng-controller="AlreadyBoughtShoppingController as itemsBought">
     <h3>Bought</h3>
-    <h4 ng-if="itemsBought.items.length === 1">{{itemsBought.items[0].message}}</h4>
+    <h4 ng-if="itemsBought.items.length === 0">Nothing bought yet</h4>
     <ul>
-        <li ng-if="$index != 0" ng-repeat="item in itemsBought.items">
+        <li ng-repeat="item in itemsBought.items">
             <span>Bought {{ ::item.quantity}} {{ ::item.name }}</span>
         </li>
     </ul>
