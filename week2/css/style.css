@@ -27,7 +27,7 @@ h1 {
     font-size: 1.25em;
     float: right;
     padding: 2px 0;
-    min-width: 200px;
+    min-width: 160px;
     border: 1px solid black;
     border-top: none;
     border-right: none;
@@ -58,20 +58,34 @@ h1 {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    h1 {
+        margin: 7px 0 0;
+    }
+    .row {
+        padding: 0 3vw;
+    }
     .col {
+        margin: 2vw;
         height: 204px;
     }
     .md-6 {
-        width: 47vw;
+        width: 43vw;
     }
     .md-12 {
-        width: 96vw;
+        width: 90vw;
     }
 }
 
 @media (max-width: 767px) {
+    h1 {
+        margin: 7px 0 0;
+    }
+    .row {
+        padding: 0 10vw;
+    }
     .col {
-        width: 96vw;
-        height: 204px;
+        width: 80vw;
+        margin: 2vw 0;
+        height: 154px;
     }
 }
