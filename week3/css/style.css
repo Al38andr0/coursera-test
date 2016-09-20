@@ -1,0 +1,60 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+* {
+    color: black!important;
+}
+#customNavbar {
+    background: #999999;
+    border-color: black;
+    border-radius: 0;
+}
+
+#customButton {
+    border-color: black;
+    background: #bbbbbb;
+}
+#customButton:focus {
+    background: #dddddd;
+}
+
+#menu {
+    border: none;
+    padding: 0;
+}
+#menu ul {
+    margin: 0;
+    background: #dddddd;
+}
+#menu li {
+    border-bottom: thin solid black;
+}
+#menu li:first-of-type {
+    border-top: thin solid black;
+}
+#menu li:last-of-type {
+    border-bottom: none;
+}
+#customButton span{
+    background: black;
+}
+
+.row {
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.75em;
+    margin: 0 0 20px;
+    font-weight: bold;
+}
+h2 {
+    font-size: 1.25em;
+    margin: 15px 0;
+    font-weight: bold;
+    }
+.container-fluid .row .customCol {
+    margin: 0 0 15px;
+    background: #999999;
+}
