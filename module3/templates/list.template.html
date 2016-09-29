@@ -1,0 +1,9 @@
+<ol>
+    <li ng-repeat="item in dir.items">
+        <div class="itemData">
+            <p>{{ item.name }} ({{item.short_name}})</p>
+            <h6>{{ item.description }}</h6>
+        </div>
+        <button class="btn btn-info" ng-click="dir.remove({index: $index});">Don't want this one!</button>
+    </li>
+</ol>

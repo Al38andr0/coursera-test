@@ -1,10 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/app.js"></script>
 </head>
-<body>
+<body ng-app="NarrowItDownApp" ng-controller="NarrowItDownController as vm">
+<div class="container">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
 
+    <div class="form-group">
+        <input type="text" placeholder="search term" class="form-control" ng-model="vm.searchedWord">
+    </div>
+    <div class="form-group narrow-button">
+        <button class="btn btn-primary" ng-click="vm.searchTerms(vm.searchedWord)">Narrow It Down For Me!</button>
+    </div>
+
+    <!-- Bonus loader (see Bonus section of the assignment) -->
+    <items-loader-indicator ng-if="vm.loader"></items-loader-indicator>
+
+    <!-- found-items should be implemented as a component -->
+    <found-items id="items" found-items="vm.found" on-remove="vm.onRemove(index)"></found-items>
+    <div id="empty" ng-if="vm.empty">
+        <h4>Nothing found!</h4>
+    </div>
+</div>
 </body>
 </html>
