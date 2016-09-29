@@ -8,6 +8,9 @@ function MenuSearchService($http, ApiPath) {
             url: (ApiPath)
         }).then(function (result) {
             var foundItems = [];
+            if (searchTerms === '') {
+                return foundItems;
+            }
             var items = result.data.menu_items;
             for(var i = 0; i < items.length; i++) {
                 if(items[i].description.indexOf(searchTerms) !== -1) {
