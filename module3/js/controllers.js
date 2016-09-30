@@ -22,9 +22,3 @@ function NarrowItDownController(MenuSearchService) {
         });
     };
 }
-
-foundItemsController.$inject = [];
-
-function foundItemsController() {
-    var dir = this;
-}

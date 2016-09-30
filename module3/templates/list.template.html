@@ -1,9 +1,9 @@
 <ol>
-    <li ng-repeat="item in dir.items">
+    <li ng-repeat="item in foundItems">
         <div class="itemData">
             <p>{{ item.name }} ({{item.short_name}})</p>
             <h6>{{ item.description }}</h6>
         </div>
-        <button class="btn btn-info" ng-click="dir.remove({index: $index});">Don't want this one!</button>
+        <button class="btn btn-info" ng-click="onRemove({index: $index});">Don't want this one!</button>
     </li>
 </ol>
