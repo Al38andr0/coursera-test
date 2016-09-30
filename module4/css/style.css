@@ -1,0 +1,11 @@
+*[ui-sref] {
+    color: blue;
+    cursor: pointer;
+}
+*[ui-sref]:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+#home {
+    text-align: center;
+}
